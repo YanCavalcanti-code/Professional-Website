@@ -1,0 +1,109 @@
+<!Doctype html>
+<html>   
+<head>
+    <title>Página Yan S. Cavalcanti</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="pag.css"/>
+
+    <link rel="stylesheet"href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+            
+           
+    <!--PLUGIN CONTROL JS-->
+    <script type="text/javascript" src="js/L.Control.ZoomBar.js"></script>
+    <!--PLUGIN CONTROL CSS-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/L.Control.ZoomBar.css"/>
+
+    <!--HEAT MAP - CHAMANDO BIBLIOTECA ESRI-->
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.5.1/dist/esri-leaflet.js"
+    integrity="sha512-q7X96AASUF0hol5Ih7AeZpRF6smJS55lcvy+GLWzJfZN+31/BQ8cgNx2FGF+IQSA4z2jHwB20vml+drmooqzzQ=="
+    crossorigin=""></script>
+    <!-- Include Leaflet.heat from CDN -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <!-- Load Heatmap Feature Layer from CDN -->
+    <script src="https://unpkg.com/esri-leaflet-heatmap@2.0.0"></script>
+    <!-- Heatmap Feature Layer -->
+    <script src="https://unpkg.com/esri-leaflet-heatmap@2.0.0/dist/esri-leaflet-heatmap.js"
+    integrity="sha512-fSJJRfO4PK90PN9jKKBzBZmzlNRsR12QA/CqTTWgfUTfLMF1Nrx5ouOqlpzC8LQIP+Qz0/G4BlHSgxHrCLHuMA=="
+    crossorigin=""></script>
+
+
+    <!--POLYGON MUNICÍPIO DE MATOSINHOS-->
+    <script src="Geojson_PagWeb/CMM.geojson"></script>
+    <!--POINTS ALOJAMENTO LOCAL-->
+    <script src="Geojson_PagWeb/Alojamento_Matosinhos.geojson"></script>
+    <!--POINTS HOTEIS-->
+    <script src="Geojson_PagWeb/ET_Matosinhos.geojson"></script>
+    <!--POINTS AGÊNCIAS DE VIAGEM E TURISMO-->
+    <script src="Geojson_PagWeb/Agencia_ViagTuris.geojson"></script>
+    <!--POLYGON LIMITE FAVELAS-->
+    <script src="Geojson_PagWeb/Limite_Favelas.geojson"></script>
+    <!--POLYGON LIMITES UPP-->
+    <script src="Geojson_PagWeb/UPP.geojson"></script>
+    <!--POLYGON MUNICÍPIO RIO DE JANEIRO-->
+    <script src="Geojson_PagWeb/MunicipioRJ.geojson"></script>
+</head>
+<body>
+    <div id="boxTop">
+        <h1 id="Nome"><a href="index.html">Yan Souza Cavalcanti</a></h1>
+        <h2 id="Prof">Geógrafo</h2>
+        <nav class="Menu">
+            <ul>
+                <li><a href="index.html">Informações<br>Pessoais</a></li>
+                <li><a href="pag2.html">Formação</a></li>
+                <li><a href="pag3.html">Eventos<br>Académicos</a></li>
+                <li><a href="pag4.html">Experiência<br>Profissional</a></li>
+                <li><a href="pag5.html">Competências</a></li>
+                <li><a href="pag6.html">Trabalhos<br>Realizados</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="boxBottom">
+        <h1 class="title">Trabalhos Realizados</h1>
+        <div style="width: 700px; height: 600px; float: left; padding-bottom: 30px;">
+            <!-- Include Leaflet.heat from CDN -->
+            <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+            <!-- Load Heatmap Feature Layer from CDN -->
+            <script src="https://unpkg.com/esri-leaflet-heatmap@2.0.0"></script>
+            
+            <!--ENQUADRAMENTO MAPA-->
+            <div id="map" style="width: 685px; height: 600px;">i</div>
+            <!--CONEXĀO FICHEIRO JAVASCRIPT-->
+            <script src="pag6.js"></script> 
+    </div>
+
+        <!--DESCRIÇÃO DO MAPA-->
+        <p id="descricao_mapa">
+            Estão expostos no mapa, alguns dos trabalhos realizados no âmbito académico e profissional, os quais podem ser
+            consultados atravéz das janelas <i>popup</i> das suas respespetivas <i>layers</i>, ou acessados atravéz dos <i>links</i> foranecidos abaixo.
+        </p>
+        <ul>
+            <li class="trabalhos"><strong>Análise Espacial Aplicada ao Ordenamento Territorial do Distrito de Leiria (2020)</strong><br>
+                <a class="documento"href="./Trabalhos/AEOT_Relatorio.pdf" target="_blank"> <i class="far fa-file-pdf"></i> Abrir Relatório</a>
+            </li>
+            <br>
+            <li class="trabalhos"><strong>Trabalho de Estágio - Câmara Matosinhos (2020)</strong><br>
+                <a class="documento"href="#" target="_blank"> <i class="far fa-file-pdf"></i> Relatório</a> 
+                <a class="documento"href="https://arcg.is/14zuGW" target="_blank"> &nbsp;&nbsp;<i class="far fa-chart-bar"></i> Dashboard</a>
+            </li>
+            <br>
+            <li class="trabalhos"><strong>Trabalho de Conclusão de Curso - Monografia PUC-Rio (2018)</strong><br>
+                <a class="documento"href="./Trabalhos/YanCavalcanti_Monografia.pdf" target="_blank"> <i class="far fa-file-pdf"></i> Abrir Monografia</a>
+                <a class="documento"href="./Trabalhos/Mapa_Favelas.pdf" target="_blank">  &nbsp; &nbsp;<i class="far fa-map"></i> Mapa</a>
+                <a class="documento"href="./Trabalhos/MonografiaBanner.pdf" target="_blank">  &nbsp; &nbsp;<i class="far fa-file-pdf"></i> <i>Banner</i></a>
+            </li> 
+            <br>
+            <li class="trabalhos"><strong>Levantamento Cartográfico Lavouras da Fisga (2020)</strong><br>
+                <a class="documento"href="./Trabalhos/Lavouras_Fisga.pdf" target="_blank"> <i class="far fa-map"></i> Mapas</a>
+
+            </li>         
+        </ul>
+    </div>
+    <footer>
+        <p id="autoria">Elaborado por Yan Souza Cavalcanti ©2020</p>
+    </footer>
+</body>
+</html>
