@@ -63,10 +63,10 @@ body{
 .github{
     font-size: 18px;
     text-decoration: none;
-    color: #333333;
+    color: blue;
 }
 .github:visited {
-    color: #333333;
+    color: blue;
 }
 .width60{
     width: 60%;
