@@ -60,6 +60,14 @@ body{
     font-size: 18px;
     text-decoration: none;
 }
+.github{
+    font-size: 18px;
+    text-decoration: none;
+    color: #333333;
+}
+.github:visited {
+    color: #333333;
+}
 .width60{
     width: 60%;
 }
