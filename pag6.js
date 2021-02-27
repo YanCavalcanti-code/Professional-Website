@@ -338,6 +338,42 @@ var map = L.map('map',{ center: [8.37383038282158, -27.550010005249256], zoom: 3
     //ADD ZOOM BAR
     var zoom_bar = new L.Control.ZoomBar({position: 'topleft'}).addTo(map);
 
+    //Draw Tools
+    var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+   // Initialise the draw control and pass it the FeatureGroup of editable layers
+    var drawControl = new L.Control.Draw({draw: {
+  polygon: {
+    shapeOptions: {
+      color: 'yellow'
+    },
+  },
+  polyline: {
+    shapeOptions: {
+      color: 'red'
+    },
+  },
+  rect: {
+    shapeOptions: {
+      color: 'yellow'
+    },
+  },
+  circle: {
+    shapeOptions: {
+      color: 'orange'
+    },
+  },
+},edit: {featureGroup: drawnItems}});
+map.addControl(drawControl);
+map.on('draw:created', function (e) {
+  var type = e.layerType,
+  layer = e.layer;
+  if (type === 'marker') {
+  layer.bindPopup('A popup!');
+  }
+  drawnItems.addLayer(layer);
+});
+
    //RULER
     var options = {
     position: 'topleft',
