@@ -335,5 +335,34 @@ var map = L.map('map',{ center: [8.37383038282158, -27.550010005249256], zoom: 3
     //SCALE
     L.control.scale().addTo(map);
 
-    // ADICIONANDO ZOOM BAR
+    //ADD ZOOM BAR
     var zoom_bar = new L.Control.ZoomBar({position: 'topleft'}).addTo(map);
+
+   //RULER
+    var options = {
+    position: 'topleft',
+    circleMarker: {               // Leaflet circle marker options for points used in this plugin
+        color: 'red',
+        radius: 2
+      },
+
+    lineStyle: {                  // Leaflet polyline options for lines used in this plugin
+        color: 'red',
+        dashArray: '1,6'
+      },
+
+    lengthUnit: {
+      factor: '0.539956803',     //  from km to nm
+      display: 'km',
+      decimal: 3,
+      label: 'Distance',
+    },
+
+    angleUnit: {
+        display: '&deg;',        // This is the display value will be shown on the screen. Example: 'Gradian'
+        decimal: 3,              // Bearing result will be fixed to this value.
+        factor: null,            // This option is required to customize angle unit. Specify solid angle value for angle unit. Example: 400 (for gradian).
+        label: 'Bearing:'
+      }
+    };
+    L.control.ruler(options).addTo(map);
