@@ -1,6 +1,13 @@
         
 var map = L.map('map',{ center: [8.37383038282158, -27.550010005249256], zoom: 3, zoomControl: false});
 
+    //Mini-Map
+    var osmUrl='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+    var osmAttrib='Map data &copy; OpenStreetMap contributors';		
+    //Plugin magic goes here! Note that you cannot use the same layer object again, as that will confuse the two map controls
+    var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib });
+    var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map);
+
 
     //COORDENADAS MOUSE - 1º Passo
     var coordDIV = document.createElement('div');
@@ -33,7 +40,19 @@ var map = L.map('map',{ center: [8.37383038282158, -27.550010005249256], zoom: 3
     var OpenStreet = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution:'<a href="https://www.openstreetmap.org/#map=17/-21.00148/-44.99806">©OpenStreetMap</a> Contributors'});
 
     var TopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {attribution:'©OpenTopoMap Contributors'})
-
+    
+    //GRID
+    L.latlngGraticule({
+        showLabel: true,
+        dashArray: [2, 2],
+        zoomInterval: [
+            {start: 2, end: 3, interval: 30},
+            {start: 4, end: 4, interval: 10},
+            {start: 5, end: 7, interval: 5},
+            {start: 8, end: 10, interval: 1}
+        ]
+    }).addTo(map);
+    
     //MARCADORES
 
     //Incorporando Imagem ao Marcador
